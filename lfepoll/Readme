@@ -1,0 +1,17 @@
+
+
+#短连接优化方法(实测可达到7-8万/秒的accept速率):
+
+/proc/sys/net/core/somaxconn = 4096
+
+/proc/sys/net/ipv4/之下的:
+    tcp_max_syn_backlog = 8192
+    tcp_syn_retries= 5
+    tcp_synack_retries = 5
+    tcp_abort_on_overflow=0
+    tcp_tw_reuse=1
+    tcp_tw_recycle=1
+    tcp_timestamps=1
+    tcp_syncookies=1
+
+#支持lua编写回调函数, 注意编译指定宏SUPPORT_LUA_5_2
