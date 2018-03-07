@@ -1,3 +1,1 @@
-demo
-====
-一些demo程序
+It is used for the learning of "Unix Network Programming -- The Socket Network API"
